@@ -25,4 +25,5 @@ int Core::Init(HWND _hWnd, POINT _resolution)
 void Core::Progress()
 {
 
+
 }
