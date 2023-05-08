@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GameEngine">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="GameEngine\01.Header">
+      <UniqueIdentifier>{76f8a5b0-e2d2-4917-a9a2-71b39b9cf9e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\02.Core">
+      <UniqueIdentifier>{6dde4920-daaf-4cbb-9213-30110c67041b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03.Manager">
+      <UniqueIdentifier>{3d743f2e-f8f5-41f5-b7cf-0a6af8ee6d52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\04.Object">
+      <UniqueIdentifier>{7eec035e-9700-4b1d-93a9-2b357e6c03da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\05.Scene">
+      <UniqueIdentifier>{46353b8c-0e82-4571-8a6d-5d9470dd80f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\06.Resource">
+      <UniqueIdentifier>{88472981-e45f-46d9-bac4-c06b671e416a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\07.Component">
+      <UniqueIdentifier>{3cc7c3f6-fdb4-4b16-8498-a64369258d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\08.Module">
+      <UniqueIdentifier>{c996d7b4-cc9d-4ff6-9e63-7b502902447d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Default">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Default\리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GameEngine\03.Manager\CameraMgr">
+      <UniqueIdentifier>{99ea1fc9-9543-46d6-9bc2-5fb7685327f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03.Manager\CollisionMgr">
+      <UniqueIdentifier>{4f8b3a9e-6288-458c-aaee-5c233ef06a57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03.Manager\KeyMgr">
+      <UniqueIdentifier>{2c6f1cb2-d0a5-4b5f-8eb1-924c16647503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03.Manager\EventMgr">
+      <UniqueIdentifier>{0dfd4cf2-0d42-41b3-9ca6-83dbc3f8e373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03.Manager\TimeMgr">
+      <UniqueIdentifier>{62e774c4-6264-409d-87bf-bd8064f4017c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03.Manager\ResMgr">
+      <UniqueIdentifier>{b3815e7e-c9a7-45c4-9125-fbc6abd224c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03.Manager\PathMgr">
+      <UniqueIdentifier>{944c33f9-ccae-4b89-94e8-a8dda8bb693a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\03.Manager\SceneMgr">
+      <UniqueIdentifier>{eea40bcc-331a-4495-9480-0df3f1ab8e6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\06.Resource\Texture">
+      <UniqueIdentifier>{789203cf-4fed-491c-b181-b6590152bec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\06.Resource\Sound">
+      <UniqueIdentifier>{4d67e9c2-0a66-4b6c-9ac4-2a1987ed410c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\01.Header\struct">
+      <UniqueIdentifier>{f0b27b91-e408-4396-941d-184f896a6211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\01.Header\struct\Vector2">
+      <UniqueIdentifier>{ff6af251-4bda-4d4d-a430-9d47d3016709}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowEngine.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>GameEngine\01.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadMe.h">
+      <Filter>GameEngine\01.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>GameEngine\02.Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Bug.h">
+      <Filter>GameEngine\01.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraMgr.h">
+      <Filter>GameEngine\03.Manager\CameraMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>GameEngine\03.Manager\CollisionMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="EventMgr.h">
+      <Filter>GameEngine\03.Manager\EventMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMgr.h">
+      <Filter>GameEngine\03.Manager\KeyMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="PathMgr.h">
+      <Filter>GameEngine\03.Manager\PathMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="ResMgr.h">
+      <Filter>GameEngine\03.Manager\ResMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMgr.h">
+      <Filter>GameEngine\03.Manager\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="TimgMgr.h">
+      <Filter>GameEngine\03.Manager\TimeMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>GameEngine\04.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>GameEngine\05.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Res.h">
+      <Filter>GameEngine\06.Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>GameEngine\01.Header\struct\Vector2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WindowEngine.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Default</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp">
+      <Filter>GameEngine\02.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraMgr.cpp">
+      <Filter>GameEngine\03.Manager\CameraMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>GameEngine\03.Manager\CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="EventMgr.cpp">
+      <Filter>GameEngine\03.Manager\EventMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyMgr.cpp">
+      <Filter>GameEngine\03.Manager\KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="PathMgr.cpp">
+      <Filter>GameEngine\03.Manager\PathMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="ResMgr.cpp">
+      <Filter>GameEngine\03.Manager\ResMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMgr.cpp">
+      <Filter>GameEngine\03.Manager\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="TimgMgr.cpp">
+      <Filter>GameEngine\03.Manager\TimeMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>GameEngine\04.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>GameEngine\05.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Res.cpp">
+      <Filter>GameEngine\06.Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>GameEngine\01.Header\struct\Vector2</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WindowEngine.rc">
+      <Filter>Default\리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Default\리소스 파일</Filter>
+    </Image>
+    <Image Include="WindowEngine.ico">
+      <Filter>Default\리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
