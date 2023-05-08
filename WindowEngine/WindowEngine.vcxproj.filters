@@ -96,9 +96,6 @@
     <ClInclude Include="pch.h">
       <Filter>GameEngine</Filter>
     </ClInclude>
-    <ClInclude Include="Core.h">
-      <Filter>GameEngine\02.Core</Filter>
-    </ClInclude>
     <ClInclude Include="Bug.h">
       <Filter>GameEngine\01.Header</Filter>
     </ClInclude>
@@ -137,6 +134,9 @@
     </ClInclude>
     <ClInclude Include="Vector2.h">
       <Filter>GameEngine\01.Header\struct\Vector2</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>GameEngine\02.Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -31,6 +31,8 @@ public:
 	void Nomalize();
 	[[nodiscard]] Vector2 GetNomalize() const;
 
+	inline Vector2 ToPolarCoordinate() const;
+	inline Vector2 ToCartesianCoordinate() const;
 
 	/// 정적멤버 변수
 	static const Vector2 UnitX; // 표준기저벡터
@@ -40,14 +42,6 @@ public:
 	static constexpr int Dimension = 2;
 
 	/// 멤버 변수
-	union
-	{
-		struct
-		{
-			float x, y;
-		};
-
-		array<float, Dimension> Scalars;
-	};
+	float x, y;
 
 };

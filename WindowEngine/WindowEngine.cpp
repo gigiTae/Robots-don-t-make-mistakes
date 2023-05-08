@@ -53,6 +53,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WINDOWENGINE));
 
     MSG msg;
+    
 
 	// 기본 메시지 루프입니다:
 	// msg.message == WM_QUIT 인 경우 false를 반환 -> 프로그램 종료

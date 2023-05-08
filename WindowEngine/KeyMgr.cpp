@@ -3,8 +3,10 @@
 
 void KeyMgr::Init()
 {
+
 }
 
 void KeyMgr::Update()
 {
+
 }
