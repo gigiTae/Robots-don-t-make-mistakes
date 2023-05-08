@@ -41,5 +41,6 @@ using std::wstring;
 #include <assert.h>
 
 #include "define.h"
+#include "Vector2.h"
 
 #endif //PCH_H

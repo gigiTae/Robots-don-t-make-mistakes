@@ -40,17 +40,40 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     }
 
+    /// Core 객체를 초기화 메인 윈도우 핸들과 POINT 자료형으로 받아서  화면크기를 설정
+    if (FAILED(Core::GetInst()->Init(g_hWnd, POINT{ 500, 500 }))) 
+	{
+        // 객체초기화에 실패시에 오류메세지 발생
+
+		MessageBox(nullptr, L"Core 객체 초기화 실패", L"ERROR", MB_OK);
+
+		return false;
+    }
+
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WINDOWENGINE));
 
     MSG msg;
 
-    // 기본 메시지 루프입니다:
-    while (GetMessage(&msg, nullptr, 0, 0))
+	// 기본 메시지 루프입니다:
+	// msg.message == WM_QUIT 인 경우 false를 반환 -> 프로그램 종료
+    while (true)
     {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+        if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
+            // 프로그램 종료 메세지
+            if (msg.message == WM_QUIT)
+                break;
+            if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+            {
+                TranslateMessage(&msg);
+                DispatchMessage(&msg);
+            }
+        }
+        else
+        {
+            /// 프로그램 핵심 루프 
+            /// Core의 progress 진행
+            Core::GetInst()->Progress();
         }
     }
 
@@ -99,16 +122,17 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+   /// 메인 윈도우 핸들은 여기서 받음
+   g_hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
-   if (!hWnd)
+   if (!g_hWnd)
    {
       return FALSE;
    }
 
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
+   ShowWindow(g_hWnd, nCmdShow);
+   UpdateWindow(g_hWnd);
 
    return TRUE;
 }
