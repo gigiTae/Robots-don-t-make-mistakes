@@ -1,8 +1,7 @@
 #pragma once
 #include "Res.h"
 
-
-class Texture :
+class Texture : // Texture는 Res의 파생클래스
     public Res
 {
 

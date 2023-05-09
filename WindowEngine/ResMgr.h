@@ -1,10 +1,12 @@
 #pragma once
 
-
-
 class Res;
 class Texture;
 
+/// <summary>
+/// 역할 : 리소스 제어 (로드, 생성, 검색)
+/// 담당자 : 공준열
+/// </summary>
 class ResMgr
 {
 	SINGLE(ResMgr);
