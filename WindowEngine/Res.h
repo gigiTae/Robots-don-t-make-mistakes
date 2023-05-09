@@ -1,20 +1,25 @@
 #pragma once
 
+/// <summary>
+/// 역할 : 리소스의 키 & 상대경로를 다루는 기반클래스
+/// 담당자 : 공준열
+/// </summary>
 class Res
 {
-
 private:
+
 	/// 멤버변수
-	wstring m_key;          // 리소스 키
-	wstring m_relativePath; // 리소스 상대경로
+	wstring m_key;          // 리소스 키 => Key
+	wstring m_relativePath; // 리소스 상대경로 => Value
 
 public:
-	/// 멤버 함수
-	void SetKey(const wstring& _key) { m_key = _key; }
-	void SetRelativePath(const wstring& _path) { m_relativePath = _path; }
 
-	const wstring& GetKey() { return m_key; }
-	const wstring& GetRelativePath() { return m_relativePath; }
+	/// 멤버 함수
+	void SetKey(const wstring& _key) { m_key = _key; } // key setter
+	void SetRelativePath(const wstring& _path) { m_relativePath = _path; } // path setter
+
+	const wstring& GetKey() { return m_key; } // key getter
+	const wstring& GetRelativePath() { return m_relativePath; } // path getter
 
 public:
 	

@@ -33,7 +33,6 @@ public: // member func
 	// Path Manager 초기화 함수
 	void init();
 
-	// ReadOnly : wchar_t*의 자료형 "m_szContentPath"를 수정하지 않음
 	// m_szContentPath의 getter
 	const wchar_t* GetContentPath();
 

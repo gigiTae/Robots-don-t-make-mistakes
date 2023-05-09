@@ -1,10 +1,9 @@
 #pragma once
 #include "Res.h"
 
-class Texture : // Texture는 Res의 파생클래스
-    public Res
+class Texture // Texture는 Res의 파생클래스
+    : public Res
 {
-
 private:
 
     /// 멤버 변수
@@ -15,7 +14,6 @@ private:
 public:
 
     /// 멤버 함수
-
     void Load(const wstring& _filePath);
     void Create(UINT _width, UINT _height);
     UINT GetWidth() { return m_bitInfo.bmWidth; }
@@ -23,6 +21,7 @@ public:
     HDC GetDC() { return m_dc; }
 
 private:
+
     Texture();
     virtual ~Texture();
 
@@ -30,4 +29,3 @@ private:
     /// 즉 Texture는 ResMgr를 통해서만 생성하겠다라는 의미이다. 
     friend class ResMgr;
 };
-
