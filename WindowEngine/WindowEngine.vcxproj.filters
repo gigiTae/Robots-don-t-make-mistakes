@@ -73,6 +73,9 @@
     <Filter Include="GameEngine\01.Header\struct\Vector2">
       <UniqueIdentifier>{ff6af251-4bda-4d4d-a430-9d47d3016709}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEngine\01.Header\struct\Math">
+      <UniqueIdentifier>{eb8fbbf0-3886-4a93-8ad7-4369e143c923}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -132,11 +135,14 @@
     <ClInclude Include="Res.h">
       <Filter>GameEngine\06.Resource</Filter>
     </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>GameEngine\02.Core</Filter>
+    </ClInclude>
     <ClInclude Include="Vector2.h">
       <Filter>GameEngine\01.Header\struct\Vector2</Filter>
     </ClInclude>
-    <ClInclude Include="Core.h">
-      <Filter>GameEngine\02.Core</Filter>
+    <ClInclude Include="Math.h">
+      <Filter>GameEngine\01.Header\struct\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
