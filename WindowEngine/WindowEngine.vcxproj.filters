@@ -126,9 +126,6 @@
     <ClInclude Include="TimgMgr.h">
       <Filter>GameEngine\03.Manager\TimeMgr</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>GameEngine\04.Object</Filter>
-    </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>GameEngine\05.Scene</Filter>
     </ClInclude>
@@ -146,6 +143,12 @@
     </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>GameEngine\06.Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>GameEngine\04.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGDI.h">
+      <Filter>GameEngine\08.Module</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +199,9 @@
     </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>GameEngine\06.Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGDI.cpp">
+      <Filter>GameEngine\08.Module</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

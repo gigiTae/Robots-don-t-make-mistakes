@@ -116,7 +116,7 @@ Vector2 Vector2::GetNormalize() const
 
 inline float Vector2::Angle() const
 {
-	return atan2f(y, x);
+	return atan2f(y, x); 
 }
 
 void Vector2::Nomalize()

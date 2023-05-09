@@ -23,3 +23,22 @@ enum class SCENE_TYPE
 
 	END,
 };
+
+
+enum class BRUSH_TYPE
+{
+	HOLLOW,
+	BLACK,
+
+	// 流立 秦力秦具窍绰 brush 2
+	
+	END,
+};
+
+enum class PEN_TYPE
+{
+	RED,
+	GREEN,
+	BLUE,
+	END,
+};

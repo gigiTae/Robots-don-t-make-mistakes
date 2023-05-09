@@ -2,5 +2,9 @@
 
 class PathMgr
 {
+	SINGLE(PathMgr);
+
+
+
 };
 
