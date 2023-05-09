@@ -16,15 +16,15 @@ TimgMgr::~TimgMgr()
 {
 }
 
-void TimgMgr::init()
+void TimgMgr::Init()
 {
 }
 
-void TimgMgr::update()
+void TimgMgr::Update()
 {
 }
 
-void TimgMgr::render()
+void TimgMgr::Render()
 {
 }
 

@@ -17,9 +17,9 @@ private:
 	UINT m_FramePerSecond;
 
 public:
-	void init();
-	void update();
-	void render();
+	void Init();
+	void Update();
+	void Render();
 
 	double GetDeltaTime();
 	UINT GetFramePerSecond();
