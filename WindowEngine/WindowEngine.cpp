@@ -41,7 +41,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     }
 
     /// Core 객체를 초기화 메인 윈도우 핸들과 POINT 자료형으로 받아서  화면크기를 설정
-    if (FAILED(Core::GetInst()->Init(g_hWnd, POINT{ 500, 500 }))) 
+    if (FAILED(Core::GetInst()->Init(g_hWnd, POINT{ 1200, 900 }))) 
 	{
         // 객체초기화에 실패시에 오류메세지 발생
 

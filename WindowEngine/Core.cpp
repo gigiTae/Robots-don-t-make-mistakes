@@ -3,6 +3,10 @@
 #include "Core.h"
 #include "KeyMgr.h"
 #include "TimgMgr.h"
+#include "Scene.h"
+#include "SceneMgr.h"
+#include "EventMgr.h"
+#include "PathMgr.h"
 
 Core::Core()
 	:m_hWnd(nullptr)
@@ -46,11 +50,16 @@ int Core::Init(HWND _hWnd, POINT _resolution)
 	// 자주 사용하는 펜과 브러쉬 생성
 	CreateBrushPen();
 
+
+	// 메인 윈도우 DC를 받아온다.
+	m_hDC = GetDC(_hWnd);
+
 	// Manager 초기화
 
-	// TimgMgr::GetInst()->Init();
+	TimgMgr::GetInst()->Init();
 	KeyMgr::GetInst()->Init();
-	// PathMgr::GetInst()->Init();
+	//PathMgr::GetInst()->Init();
+	SceneMgr::GetInst()->Init();
 
 	return S_OK; // 초기화 성공을 반환
 }
@@ -60,13 +69,14 @@ void Core::Progress()
 	// ============================
 	//        Manager Update
     // ============================
-
+	TimgMgr::GetInst()->Update();
 	KeyMgr::GetInst()->Update();
 
 	// ============================
 	//        Scene Update
 	// ============================
-
+	SceneMgr::GetInst()->Update();
+	SceneMgr::GetInst()->FinalUpdate();
 
 	// ============================
 	//           충돌 체크
@@ -76,12 +86,12 @@ void Core::Progress()
 	// ============================
 	//           랜더링
 	// ============================
-
+	SceneMgr::GetInst()->Render(m_hDC);
 
 	// ============================
 	//        이벤트 지연 처리
 	// ============================
-
+	EventMgr::GetInst()->Update();
 }
 
 void Core::ChangeWindowSize(Vector2 _resolution ,bool _menu)

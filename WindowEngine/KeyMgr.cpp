@@ -127,7 +127,8 @@ void KeyMgr::Update()
 			{
 				m_vecKey[i].eState = KEY_STATE::NONE;
 			}
+		}
+
+
 	}
-
-
 }

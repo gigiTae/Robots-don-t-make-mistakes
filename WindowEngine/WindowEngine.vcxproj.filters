@@ -76,6 +76,15 @@
     <Filter Include="GameEngine\01.Header\struct\Math">
       <UniqueIdentifier>{eb8fbbf0-3886-4a93-8ad7-4369e143c923}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEngine\01.Header\func">
+      <UniqueIdentifier>{bc67dd6e-b76d-4694-8a70-d9ffeffd94a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\05.Scene\Scene_Main">
+      <UniqueIdentifier>{bf192db3-ffbd-4a45-8161-73d939f6fba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\04.Object\Object_Box">
+      <UniqueIdentifier>{a54b1f7a-7bc8-4ccf-bf88-f52f41244744}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -150,6 +159,15 @@
     <ClInclude Include="SelectGDI.h">
       <Filter>GameEngine\08.Module</Filter>
     </ClInclude>
+    <ClInclude Include="func.h">
+      <Filter>GameEngine\01.Header\func</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Main.h">
+      <Filter>GameEngine\05.Scene\Scene_Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Object_Box.h">
+      <Filter>GameEngine\04.Object\Object_Box</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowEngine.cpp">
@@ -202,6 +220,15 @@
     </ClCompile>
     <ClCompile Include="SelectGDI.cpp">
       <Filter>GameEngine\08.Module</Filter>
+    </ClCompile>
+    <ClCompile Include="func.cpp">
+      <Filter>GameEngine\01.Header\func</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Main.cpp">
+      <Filter>GameEngine\05.Scene\Scene_Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Object_Box.cpp">
+      <Filter>GameEngine\04.Object\Object_Box</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

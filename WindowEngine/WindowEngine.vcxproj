@@ -142,9 +142,11 @@
     <ClInclude Include="define.h" />
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="func.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Object_Box.h" />
     <ClInclude Include="PathMgr.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Res.h" />
@@ -152,6 +154,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="Scene_Main.h" />
     <ClInclude Include="SelectGDI.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Texture.h" />
@@ -165,8 +168,10 @@
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="EventMgr.cpp" />
+    <ClCompile Include="func.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Object_Box.cpp" />
     <ClCompile Include="PathMgr.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -178,6 +183,7 @@
     <ClCompile Include="ResMgr.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="Scene_Main.cpp" />
     <ClCompile Include="SelectGDI.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TimgMgr.cpp" />
