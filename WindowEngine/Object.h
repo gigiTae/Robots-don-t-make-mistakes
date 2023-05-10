@@ -1,5 +1,38 @@
 #pragma once
+
+
+
 class Object
 {
+
+private:
+
+	/// ¸â¹ö º¯¼ö
+	//Vector2 m_pos; 
+	//Vector2 m_scale;
+
+
+public:
+	/// ¸â¹ö ÇÔ¼ö
+
+	
+
+
+public:
+	virtual void Start() {};
+	virtual void Update() = 0;
+	virtual void Finalupdate();
+
+	virtual void Render(HDC _dc);
+
+	void RenderComponent(HDC _dc);
+
+public:
+	/// »ý¼ºÀÚ
+	Object();
+
+	/// ¼Ò¸êÀÚ
+	~Object();
+
 };
 

@@ -8,11 +8,30 @@ Core::Core()
 	:m_hWnd(nullptr)
 	,m_resolution{}
 	,m_hDC(nullptr)
+	,m_pen{}
+	,m_brush{}
 {}
 
 Core::~Core()
 {
+	// 메인 윈도우 DC는 릴리즈
+	ReleaseDC(m_hWnd, m_hDC); 
 
+	// 생성한 brush pen 해제
+	for (int i = 0; i < (UINT)PEN_TYPE::END; ++i)
+	{
+		DeleteObject(m_pen[i]);
+	}
+
+	for (int i = 0; i < (UINT)BRUSH_TYPE::END; ++i)
+	{
+		// 윈도우 기본브러쉬는 내가 삭제하지 않는다.
+		if (i < 2)
+			continue;
+
+		DeleteObject(m_brush[i]);
+	}
+	
 }
 
 int Core::Init(HWND _hWnd, POINT _resolution)
@@ -24,6 +43,8 @@ int Core::Init(HWND _hWnd, POINT _resolution)
 	ChangeWindowSize(Vector2((float)_resolution.x, (float)_resolution.y), false);
 
 
+	// 자주 사용하는 펜과 브러쉬 생성
+	CreateBrushPen();
 
 	// Manager 초기화
 
@@ -85,5 +106,20 @@ void Core::ChangeWindowSize(Vector2 _resolution ,bool _menu)
 	AdjustWindowRect(&rt, WS_OVERLAPPEDWINDOW, _menu);
 
 	SetWindowPos(m_hWnd, nullptr, 100, 100, rt.right - rt.left, rt.bottom - rt.top, 0);
+
+}
+
+void Core::CreateBrushPen()
+{
+	// 윈도우가 가지는 기본 브러쉬
+	m_brush[(UINT)BRUSH_TYPE::HOLLOW] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
+	m_brush[(UINT)BRUSH_TYPE::BLACK] = (HBRUSH)GetStockObject(BLACK_BRUSH);
+	// 여기부터 내가 추가해서 사용하는 브러쉬
+
+
+	// 추가해서 사용하는 펜
+	m_pen[(UINT)PEN_TYPE::RED] = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+	m_pen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
+	m_pen[(UINT)PEN_TYPE::GREEN] = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
 
 }
