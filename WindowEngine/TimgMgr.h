@@ -15,13 +15,13 @@ public:
 
 private:
 	LARGE_INTEGER m_curentCount;
-	LARGE_INTEGER m_previousCount;
+	LARGE_INTEGER m_prevCount;
 	LARGE_INTEGER m_frequency;
 	
 	double m_deltaTime;
-	double m_accumulatedDeltaTime;
+	double m_frameTime;
 
-	UINT m_callCount;
+	UINT m_frameCount;
 	UINT m_fps;
 
 };
