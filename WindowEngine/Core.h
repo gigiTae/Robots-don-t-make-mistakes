@@ -25,13 +25,15 @@ public:
 	// WindowSize Á¶Á¤
 	void ChangeWindowSize(Vector2 _resolution, bool _menu);
 
-
 	HBRUSH GetBrush(BRUSH_TYPE _brushType) { return m_brush[(UINT)_brushType]; }
 	HPEN GetPen(PEN_TYPE _penType) { return m_pen[(UINT)_penType]; }
 
 
 private:
 	void CreateBrushPen();
+
+public:
+	HWND GetMainHwnd() { return m_hWnd; }
 
 };
 

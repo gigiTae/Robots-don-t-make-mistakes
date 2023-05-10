@@ -49,7 +49,7 @@ int Core::Init(HWND _hWnd, POINT _resolution)
 	// Manager 초기화
 
 	// TimgMgr::GetInst()->Init();
-	// KeyMgr::GetInst()->Init();
+	KeyMgr::GetInst()->Init();
 	// PathMgr::GetInst()->Init();
 
 	return S_OK; // 초기화 성공을 반환
@@ -61,6 +61,7 @@ void Core::Progress()
 	//        Manager Update
     // ============================
 
+	KeyMgr::GetInst()->Update();
 
 	// ============================
 	//        Scene Update
