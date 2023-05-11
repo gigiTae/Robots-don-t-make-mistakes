@@ -42,6 +42,7 @@ void TimgMgr::Update()
 
 		m_frameCount = 0;
 		m_frameTime = 0.f;
+
 	}
 
 #ifdef _DEBUG
