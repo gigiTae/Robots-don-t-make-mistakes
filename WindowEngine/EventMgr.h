@@ -40,7 +40,7 @@ public:
 private:
 
 	/// 외부에서는 필요하지 않는 함수이므로 private 선언
-	void ExcuteEvent(const Event& _event);
+	void ExecuteEvent(const Event& _event);
 	void AddEvent(const Event& _event) { m_event.push_back(_event); }
 };
 
