@@ -3,7 +3,7 @@
 
 struct Math
 {
-	// static ¸â¹ö
+	/// static ¸â¹ö
 
 	static constexpr float PI = 3.14159265358979323846f;
 	static constexpr float TwoPI = 2.f * PI;

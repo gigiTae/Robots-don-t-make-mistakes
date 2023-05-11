@@ -8,9 +8,6 @@
     <Filter Include="GameEngine\01.Header">
       <UniqueIdentifier>{76f8a5b0-e2d2-4917-a9a2-71b39b9cf9e2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameEngine\02.Core">
-      <UniqueIdentifier>{6dde4920-daaf-4cbb-9213-30110c67041b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameEngine\03.Manager">
       <UniqueIdentifier>{3d743f2e-f8f5-41f5-b7cf-0a6af8ee6d52}</UniqueIdentifier>
     </Filter>
@@ -85,6 +82,9 @@
     <Filter Include="GameEngine\04.Object\Object_Box">
       <UniqueIdentifier>{a54b1f7a-7bc8-4ccf-bf88-f52f41244744}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEngine\02.Core">
+      <UniqueIdentifier>{d0a14bd7-8b86-44c5-834b-1bcba34c04f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -102,17 +102,11 @@
     <ClInclude Include="define.h">
       <Filter>GameEngine\01.Header</Filter>
     </ClInclude>
-    <ClInclude Include="ReadMe.h">
-      <Filter>GameEngine\01.Header</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>GameEngine</Filter>
     </ClInclude>
     <ClInclude Include="Bug.h">
       <Filter>GameEngine\01.Header</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraMgr.h">
-      <Filter>GameEngine\03.Manager\CameraMgr</Filter>
     </ClInclude>
     <ClInclude Include="CollisionMgr.h">
       <Filter>GameEngine\03.Manager\CollisionMgr</Filter>
@@ -126,9 +120,6 @@
     <ClInclude Include="PathMgr.h">
       <Filter>GameEngine\03.Manager\PathMgr</Filter>
     </ClInclude>
-    <ClInclude Include="ResMgr.h">
-      <Filter>GameEngine\03.Manager\ResMgr</Filter>
-    </ClInclude>
     <ClInclude Include="SceneMgr.h">
       <Filter>GameEngine\03.Manager\SceneMgr</Filter>
     </ClInclude>
@@ -140,9 +131,6 @@
     </ClInclude>
     <ClInclude Include="Res.h">
       <Filter>GameEngine\06.Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="Core.h">
-      <Filter>GameEngine\02.Core</Filter>
     </ClInclude>
     <ClInclude Include="Vector2.h">
       <Filter>GameEngine\01.Header\struct\Vector2</Filter>
@@ -168,6 +156,21 @@
     <ClInclude Include="Object_Box.h">
       <Filter>GameEngine\04.Object\Object_Box</Filter>
     </ClInclude>
+    <ClInclude Include="ReadMe.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>GameEngine\06.Resource\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraMgr.h">
+      <Filter>GameEngine\03.Manager\CameraMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>GameEngine\02.Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ResMgr.h">
+      <Filter>GameEngine\03.Manager\ResMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowEngine.cpp">
@@ -175,9 +178,6 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Default</Filter>
-    </ClCompile>
-    <ClCompile Include="Core.cpp">
-      <Filter>GameEngine\02.Core</Filter>
     </ClCompile>
     <ClCompile Include="CameraMgr.cpp">
       <Filter>GameEngine\03.Manager\CameraMgr</Filter>
@@ -229,6 +229,12 @@
     </ClCompile>
     <ClCompile Include="Object_Box.cpp">
       <Filter>GameEngine\04.Object\Object_Box</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>GameEngine\06.Resource\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp">
+      <Filter>GameEngine\02.Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -44,18 +44,36 @@ enum class EVENT_TYPE
 
 enum class BRUSH_TYPE
 {
+	// 스톡 오브젝트
 	HOLLOW,
 	BLACK,
 
-	// 직접 해제해야하는 brush 2
-	
+	// 직접 해제해야하는 BRUSH
+	RED,
+	GREEN,
+	BLUE,
+
 	END,
 };
 
 enum class PEN_TYPE
 {
+	// 스톡 오브젝트
+	HOLLOW,
+	WHITE,
+
+	// 직접 해제해야하는 PEN
 	RED,
 	GREEN,
 	BLUE,
 	END,
+};
+
+/// <summary>
+///  사운드 종류
+/// </summary>
+enum class SOUND_TYPE
+{
+	
+
 };

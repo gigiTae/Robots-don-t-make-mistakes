@@ -18,9 +18,13 @@ void Object_Box::Update()
 
 	if (KeyMgr::GetInst()->GetKeyState(KEY::A) == KEY_STATE::HOLD)
 	{
-		pos.x++;
+		pos.x--;
 	}
 
+	if (KeyMgr::GetInst()->GetKeyState(KEY::D) == KEY_STATE::HOLD)
+	{
+		pos.x++;
+	}
 
 	// 부모클래스이 멤버함수를 함수를 통해서 값을 바꾼다.
 	SetPos(pos);

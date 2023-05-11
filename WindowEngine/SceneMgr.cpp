@@ -23,7 +23,6 @@ void SceneMgr::Init()
 	m_scene[(UINT)SCENE_TYPE::MAIN] = new Scene_Main;
 
 
-
 	// Start Scene -> 스타트씬 지정
 	m_curScene = m_scene[(UINT)SCENE_TYPE::MAIN];
 

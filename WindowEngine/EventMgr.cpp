@@ -33,20 +33,19 @@ void EventMgr::Update()
 	for (size_t i = 0; i < m_event.size(); ++i)
 	{
 		// 이번 프레임에서 발생한 이벤트들을 처리
-		ExcuteEvent(m_event[i]);
+		ExecuteEvent(m_event[i]);
 	}
 
 	// 처리한 이벤트들 클리어
 	m_event.clear();
 }
 
-void EventMgr::ExcuteEvent(const Event& _event)
+void EventMgr::ExecuteEvent(const Event& _event)
 {
 	switch (_event.type)
 	{
 	case EVENT_TYPE::CREATE_OBJECT:
 	{
-
 		// lParam : 오브젝트 주소
 		// wParam : 오브젝트 타입
 		Object* obj = (Object*)_event.lParam;

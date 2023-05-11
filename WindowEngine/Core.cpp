@@ -24,13 +24,18 @@ Core::~Core()
 	// 생성한 brush pen 해제
 	for (int i = 0; i < (UINT)PEN_TYPE::END; ++i)
 	{
+		// 윈도우 기본펜은 삭제하지 않는다.
+		if (i <= (UINT)PEN_TYPE::WHITE)
+			continue;
+
+
 		DeleteObject(m_pen[i]);
 	}
 
 	for (int i = 0; i < (UINT)BRUSH_TYPE::END; ++i)
 	{
-		// 윈도우 기본브러쉬는 내가 삭제하지 않는다.
-		if (i < 2)
+		// 윈도우 기본브러쉬는 삭제하지 않는다.
+		if(i <= (UINT)BRUSH_TYPE::BLACK)
 			continue;
 
 		DeleteObject(m_brush[i]);
@@ -122,15 +127,24 @@ void Core::ChangeWindowSize(Vector2 _resolution ,bool _menu)
 
 void Core::CreateBrushPen()
 {
-	// 윈도우가 가지는 기본 브러쉬
+	/// 추가해서 사용하는 브러쉬
+
+	// 윈도우가 가지는 기본 브러쉬 (스톡 오브젝트) 메모리를 해제하지 않는다.
 	m_brush[(UINT)BRUSH_TYPE::HOLLOW] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
 	m_brush[(UINT)BRUSH_TYPE::BLACK] = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	// 여기부터 내가 추가해서 사용하는 브러쉬
+	m_brush[(UINT)BRUSH_TYPE::RED] = CreateSolidBrush(RGB(255, 0, 0));
+	m_brush[(UINT)BRUSH_TYPE::GREEN] = CreateSolidBrush(RGB(0, 255, 0));
+	m_brush[(UINT)BRUSH_TYPE::BLUE] = CreateSolidBrush(RGB(0, 0, 255));
 
+	/// 추가해서 사용하는 펜
 
-	// 추가해서 사용하는 펜
+	// 윈도우가 가지는 기본 펜 (스톡  오브젝트) 메모리를 해제하지 않는다.
+	m_pen[(UINT)PEN_TYPE::HOLLOW] = (HPEN)GetStockObject(NULL_PEN);
+	m_pen[(UINT)PEN_TYPE::WHITE] = (HPEN)GetStockObject(WHITE_PEN);
+
 	m_pen[(UINT)PEN_TYPE::RED] = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
-	m_pen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
 	m_pen[(UINT)PEN_TYPE::GREEN] = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	m_pen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
 
 }
