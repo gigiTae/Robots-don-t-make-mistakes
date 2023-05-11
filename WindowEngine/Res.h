@@ -1,7 +1,7 @@
 #pragma once
 
 /// <summary>
-/// 역할 : 리소스의 키 & 상대경로를 다루는 기반클래스
+/// 역할 : 모든 리소스의 기반클래스
 /// 담당자 : 공준열
 /// </summary>
 class Res
@@ -9,7 +9,7 @@ class Res
 private:
 
 	/// 멤버변수
-	wstring m_key;          // 리소스 키 => Key
+	wstring m_key;          // 리소스 이름 => Key
 	wstring m_relativePath; // 리소스 상대경로 => Value
 
 public:

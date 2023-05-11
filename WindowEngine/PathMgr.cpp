@@ -2,8 +2,8 @@
 #include "PathMgr.h"
 
 // no_argument constructor
-// 생성자 초기화 리스트 사용 (더 빠르고 효율적으로 초기화)
-PathMgr::PathMgr() : m_szContentPath{}, m_szRelativePath{}
+// 생성자 초기화 리스트 사용 (더 빠르고 효율적으로 초기화) or const 멤버변수 초기화
+PathMgr::PathMgr() : m_szContentPath{}
 {}
 
 // de - constructor
@@ -39,24 +39,4 @@ void PathMgr::init()
 	// L"~\\WindowEngine\\Resource"
 	// wcscat_s : 문자열 버퍼에 문자열 이어붙이기
 	wcscat_s(m_szContentPath, 255, L"\\Resource");
-}
-
-const wchar_t* PathMgr::GetContentPath()
-{
-	return m_szContentPath;
-}
-
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ //
-// 이 함수의 용도?
-// 어디에서도 참조되지 않는다?
-wstring PathMgr::GetRelativePath(const wchar_t* _filepath)
-{
-	wstring strFilePath = _filepath;
-
-	size_t iAbsLen = wcslen(m_szContentPath);
-	size_t iFullLen = strFilePath.length();
-
-	wstring strRelativePath = strFilePath.substr(iAbsLen, iFullLen - iAbsLen);
-
-	return strRelativePath;
 }

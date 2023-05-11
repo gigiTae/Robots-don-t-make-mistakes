@@ -1,15 +1,20 @@
 #pragma once
 #include "Res.h"
 
+/// <summary>
+/// 역할 : 비트맵을 로드 및 생성
+/// 담당자 : 공준열
+/// </summary>
 class Texture // Texture는 Res의 파생클래스
     : public Res
 {
 private:
 
     /// 멤버 변수
-    HDC m_dc;
-    HBITMAP m_hBit;
-    BITMAP  m_bitInfo;
+    // Bitmap을 그리기 위한 변수들
+    HDC m_dc; // 도화지
+    HBITMAP m_hBit; // 비트맵 핸들
+    BITMAP  m_bitInfo; // 비트맵 정보
 
 public:
 
