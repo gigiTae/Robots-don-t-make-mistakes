@@ -46,7 +46,6 @@ void EventMgr::ExcuteEvent(const Event& _event)
 	{
 	case EVENT_TYPE::CREATE_OBJECT:
 	{
-
 		// lParam : 오브젝트 주소
 		// wParam : 오브젝트 타입
 		Object* obj = (Object*)_event.lParam;

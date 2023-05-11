@@ -17,6 +17,14 @@ private:
 
 	map<wstring, Res*> m_mapTex;
 
+
+
+	/// FMOD 관련 변수
+	FMOD_SYSTEM* m_system;
+	FMOD_CHANNEL* m_effectChannel;
+	FMOD_CHANNEL* m_effectBGM;
+
+
 public:
 	Texture* LoadTexture(const wstring& _key, const wstring& _relativePath);
 	Texture* CreateTexture(const wstring& _key, UINT _width, UINT _height);
