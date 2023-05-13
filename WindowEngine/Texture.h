@@ -5,7 +5,7 @@
 /// 역할 : 비트맵을 로드 및 생성
 /// 담당자 : 공준열
 /// </summary>
-class Texture // Texture는 Res의 파생클래스
+class Texture
     : public Res
 {
 private:

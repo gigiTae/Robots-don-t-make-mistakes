@@ -17,15 +17,15 @@ private:
 
 	/// 멤버 변수
 	// 리소스를 key - value 형태로 저장
+	// key : 리소스의 "이름" (wstring)
+	// value : 리소스의 "포인터" (Res*)
 	map<wstring, Res*> m_mapTex;
 
-
-
-	/// FMOD 관련 변수
+	// FMOD 관련 변수
+	// FMOD : 오디오 처리 라이브러리
 	FMOD_SYSTEM* m_system;
 	FMOD_CHANNEL* m_effectChannel;
 	FMOD_CHANNEL* m_effectBGM;
-
 
 public:
 	Texture* LoadTexture(const wstring& _key, const wstring& _relativePath);
