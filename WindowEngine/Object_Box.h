@@ -1,6 +1,8 @@
 #pragma once
 #include "Object.h"
 
+class Texture;
+
 class Object_Box
 	:public Object
 {
@@ -11,13 +13,9 @@ public:
 	// ¼Ò¸êÀÚ
 	~Object_Box();
 
-	// 
 	void Update() override;
 	void Render(HDC _dc) override;
 
-
 private:
-
-	
 };
 

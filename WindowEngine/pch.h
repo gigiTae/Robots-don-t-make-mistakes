@@ -10,10 +10,14 @@
 
 /// 여기에 미리 컴파일하려는 헤더 추가
 #include "framework.h"
+#include "Resource.h"
 
 #include <Windows.h>
 #include <iostream>
 #pragma comment(lib, "Msimg32.lib") // TransBlt 함수을 실제로 구현한 장소
+
+// 메모릭 추적
+#include <crtdbg.h>
 
 #include <vector>
 using std::vector;
@@ -37,13 +41,30 @@ using std::wstring;
 // <cmath> 헤더 파일은 <math.h> 헤더 파일을 확장한 것이며, C++에서 추가된 기능을 포함하고 있습니다.예를 들어, <cmath> 헤더 파일에는 C++에서 추가된 타입인 long long과 long double에 대한 수학 함수들이 포함되어 있습니다.
 // 또한, <cmath> 헤더 파일에는 C++11에서 추가된 std::isnan과 같은 함수들도 포함되어 있습니다.
 // 하지만, <math.h> 헤더 파일은 C 언어와 호환성을 유지하기 위해 설계되었기 때문에, C++에서 사용할 때 일부 함수들이 C 언어와 다른 방식으로 동작할 수 있습니다.따라서, 호환성을 고려할 때에는 <cmath> 헤더 파일을 사용하는 것이 좋습니다.
-#include <cmath> 
+#include <cmath>
 #include <assert.h>
+#include <random>
 
 #include "define.h"
 #include "Vector2.h"
+#include "PathPoint.h"
 #include "Math.h"
+#include "func.h"
 
-#include "fmod.h"
+#include "fmod.hpp"
+
+// FMOD
+#ifndef _WIN64
+#include "../inc/fmod.hpp"
+#pragma comment (lib, "../lib/x86/fmod_vc.lib")
+using namespace FMOD;
+#endif
+#ifdef _WIN64
+#include "fmod/inc/fmod.hpp"
+#pragma comment (lib, "fmod/lib/fmod_vc.lib")
+using namespace FMOD;
+#endif
+
+#include "GameProcess.h"
 
 #endif //PCH_H

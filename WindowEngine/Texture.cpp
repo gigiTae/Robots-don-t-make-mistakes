@@ -1,19 +1,19 @@
 #include "pch.h"
 #include "Texture.h"
-#include "Core.h" // Core의 hdc를 가져오기 위함
+#include "GameProcess.h" // Core의 hdc를 가져오기 위함
 
 // 생성자
-Texture::Texture() : m_dc(0), m_hBit(0), m_bitInfo()
+Texture::Texture() : m_memDC(0), m_hBit(0), m_bitInfo()
 {}
 
 Texture::~Texture()
 {
-	DeleteDC(m_dc); // Compatible Device Context를 삭제
+	DeleteDC(m_memDC); // Compatible Device Context를 삭제
 	DeleteObject(m_hBit); // 비트맵 핸들 삭제
 }
 
 // 비트맵 이미지를 로드
-void Texture::Load(const wstring& _filePath)
+void Texture::Load(const wstring& _filePath, HDC _mainDC)
 {
 	// LoadImage -> 비트맵을 포함한 다양한 유형의 이미지를 로드
 	/*
@@ -32,10 +32,10 @@ void Texture::Load(const wstring& _filePath)
 
 	// 호환 가능한 디바이스 컨텍스트(Compatible Device Context)를 생성
 	// CreateCompatibleDC() 함수는 원본 디바이스 컨텍스트와 호환되는 새로운 디바이스 컨텍스트를 만듭니다.
-	m_dc = CreateCompatibleDC(Core::GetInst()->GetMainDC());
+	m_memDC = CreateCompatibleDC(_mainDC);
 
 	// 불러온 비트맵과 DC 연결
-	HBITMAP hPreBit = (HBITMAP)SelectObject(m_dc, m_hBit);
+	HBITMAP hPreBit = (HBITMAP)SelectObject(m_memDC, m_hBit);
 	DeleteObject(hPreBit); // m_dc의 default 비트맵 (1 x 1)을 삭제
 
 	// 비트맵 정보를 저장
@@ -43,16 +43,13 @@ void Texture::Load(const wstring& _filePath)
 }
 
 // 비트맵 이미지를 생성
-void Texture::Create(UINT _width, UINT _height)
+void Texture::Create(UINT _width, UINT _height, HDC _mainDC)
 {
-	// 메인 DC를 가져옴
-	HDC mainDC = Core::GetInst()->GetMainDC();
-
-	m_hBit = CreateCompatibleBitmap(mainDC, _width, _height); // 호환 가능한 비트맵 생성
-	m_dc = CreateCompatibleDC(mainDC); // 호환 가능한 디바이스 컨텍스트 생성
+	m_hBit = CreateCompatibleBitmap(_mainDC, _width, _height); // 호환 가능한 비트맵 생성
+	m_memDC = CreateCompatibleDC(_mainDC); // 호환 가능한 디바이스 컨텍스트 생성
 
 	// 생성한 비트맵과 DC 연결
-	HBITMAP hOldBit = (HBITMAP)SelectObject(m_dc, m_hBit);
+	HBITMAP hOldBit = (HBITMAP)SelectObject(m_memDC, m_hBit);
 	DeleteObject(hOldBit); // m_dc의 default 비트맵 (1 x 1)을 삭제
 
 	// 비트맵 정보를 저장

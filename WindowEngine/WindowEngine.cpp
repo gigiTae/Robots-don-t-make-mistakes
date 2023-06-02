@@ -3,7 +3,7 @@
 #include "pch.h"
 #include "framework.h"
 #include "WindowEngine.h"
-#include "Core.h"
+#include "GameProcess.h"
 
 #define MAX_LOADSTRING 100
 
@@ -22,8 +22,11 @@ INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPWSTR    lpCmdLine,
-                     _In_ int       nCmdShow)
-{
+                     _In_ int       nCmdShow){
+    // 메모리 릭(누수) 체크
+    //_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    //_CrtSetBreakAlloc(1171);
+
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
@@ -40,8 +43,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     }
 
+    GameProcess* gameProcess = new GameProcess;
+
     /// Core 객체를 초기화 메인 윈도우 핸들과 POINT 자료형으로 받아서  화면크기를 설정
-    if (FAILED(Core::GetInst()->Init(g_hWnd, POINT{ 1200, 900 }))) 
+    if (FAILED(gameProcess->Init(g_hWnd, POINT{ 1920, 1080 })))
 	{
         // 객체초기화에 실패시에 오류메세지 발생
 
@@ -74,14 +79,15 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         {
             /// 프로그램 핵심 루프 
             /// Core의 progress 진행
-            Core::GetInst()->Progress();
+            gameProcess->Progress();
         }
     }
 
+    gameProcess->Exit();
+    delete gameProcess;
+
     return (int) msg.wParam;
 }
-
-
 
 //
 //  함수: MyRegisterClass()
@@ -90,7 +96,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 //
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
-    WNDCLASSEXW wcex;
+    WNDCLASSEXW  wcex;
 
     wcex.cbSize = sizeof(WNDCLASSEX);
 
@@ -102,7 +108,8 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_WINDOWENGINE));
     wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
     wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_WINDOWENGINE);
+    // 메뉴바 삭제
+    wcex.lpszMenuName =  nullptr; //MAKEINTRESOURCEW(IDC_WINDOWENGINE);
     wcex.lpszClassName  = szWindowClass;
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
