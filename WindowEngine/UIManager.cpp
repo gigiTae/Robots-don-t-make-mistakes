@@ -123,7 +123,7 @@ Object_UI* UIManager::GetFocusedUI(KeyManager* _keyManager, SceneManager* _scene
  			break;
  		}
 		// 마우스위에 있으면서 삭제되지 않는 오브젝트
-		if (((Object_UI*)*iter)->IsMouseOn() && !(*iter)->IsDead())
+		if (( dynamic_cast<Object_UI*>(*iter))->IsMouseOn() && !(*iter)->IsDead())
 		{
 			target_iter = iter;
 		}
@@ -136,7 +136,7 @@ Object_UI* UIManager::GetFocusedUI(KeyManager* _keyManager, SceneManager* _scene
 	}
 	
 	// 현재 포커스 중인 UI 
-	focusedUI = (Object_UI*)*target_iter;
+	focusedUI = dynamic_cast<Object_UI*>(*target_iter);
 	
 	// 백터 내에서 맨뒤로 순번 교체
 	vecUI.erase(target_iter);
@@ -184,6 +184,9 @@ Object_UI* UIManager::GetTargetedUI(Object_UI* _parentUI, KeyManager* _keyManage
 		const vector<Object_UI*> child = frontUI->GetChildUI();
 		for (size_t i = 0; i < child.size(); ++i)
 		{
+			Object_UI* ui = dynamic_cast<Object_UI*>(child[i]);
+			assert(ui);
+
 			queue.push_back(child[i]);
 		}
 	}

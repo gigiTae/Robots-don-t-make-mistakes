@@ -27,6 +27,7 @@ void EventManager::Update(GameProcess* gmaeProcess)
 	{
 		// 죽은 오브젝트 메모리 해제
 		delete m_deadObj[i];
+		
 	}
 	// 데드 배열 클리어
 	m_deadObj.clear();
@@ -38,6 +39,13 @@ void EventManager::Update(GameProcess* gmaeProcess)
 	{
 		// 이번 프레임에서 발생한 이벤트들을 처리
 		ExecuteEvent(m_event[i], gmaeProcess);
+
+		if (m_event[i].type == EVENT_TYPE::CHANGE_SCENE)
+		{
+			m_event.clear();
+			m_deadObj.clear(); 
+			return;
+		}
 	}
 
 	// 처리한 이벤트들 클리어
@@ -71,7 +79,7 @@ void EventManager::ExecuteEvent(const Event& _event, GameProcess* gmaeProcess)
 		if (!obj->IsDead())
 		{
 			obj->SetDead();
-			//m_deadObj.push_back(obj);
+			m_deadObj.push_back(obj);
 		}
 	}
 

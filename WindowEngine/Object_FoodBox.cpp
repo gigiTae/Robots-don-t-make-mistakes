@@ -82,7 +82,8 @@ void Object_FoodBox::OnCollision(BoxCollider* _other, GameProcess* gameProcess)
 		Object_Topping* topping = new Object_Topping(m_thisTopping, gameProcess);
 		topping->SetOwner(otherObject);
 		otherObject->SetTopping(topping);
-		gameProcess->GetEvenetManager()->CreateObject((Object*)topping, OBJECT_TYPE::FOOD);
+
+		gameProcess->GetEvenetManager()->CreateObject(topping, OBJECT_TYPE::FOOD);
 		return;
 	}
 

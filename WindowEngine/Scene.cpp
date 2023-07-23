@@ -15,8 +15,11 @@ Scene::~Scene()
 	{
 		for (size_t j = 0; j < m_obj[i].size(); ++j)
 		{
-			// m_arrObj[i] 그룹 j 물체 삭제
-			delete m_obj[i][j];
+			if (m_obj[i][j])
+				// m_arrObj[i] 그룹 j 물체 삭제
+				delete m_obj[i][j];
+
+			m_obj[i][j] = nullptr;
 		}
 
 	}
@@ -51,9 +54,10 @@ void Scene::Update(GameProcess* gameProcess)
 		{
 			for (size_t j = 0; j < m_obj[i].size(); ++j)
 			{
-				m_obj[i][j]->Update(gameProcess);
+				if (!m_obj[i][j]->IsDead())
+					m_obj[i][j]->Update(gameProcess);
 			}
-
+			 
 		}
 	}
 }
@@ -105,7 +109,17 @@ void Scene::Render(HDC _dc)
 
 void Scene::DeleteGroup(OBJECT_TYPE _target)
 {
-   Safe_Delete_Vec<Object*>(m_obj[(UINT)_target]);
+   
+   for (auto object : m_obj[(int)_target])
+   {
+
+	   if (object != nullptr)
+	   {
+		   delete object;
+	   }
+   }
+
+   m_obj[(int)_target].clear();
 }
 
 void Scene::DeleteAll()

@@ -31,7 +31,7 @@ public:
 
 public:
     Scene_Stage01();
-    ~Scene_Stage01() override;
+    ~Scene_Stage01();
 
     // 신뢰도 수치를 조정하는 함수
 	void AddTrust(float _value);

@@ -3,8 +3,9 @@
 #include "Animator.h"
 #include "Texture.h"
 #include "BoxCollider.h"
-
+#include "Object_Pizza.h"
 #include "EventManager.h"
+#include "Object_Topping.h"
 #include "Object_Food.h"
 
 Object::Object()
@@ -66,12 +67,16 @@ void Object::DeleteFood(EventManager* _eventManager)
 	// 피자랑 토핑이 nullptr 상태가 아닌 경우 삭제해줌
 	if (nullptr != m_pizza)
 	{
-		_eventManager->DeleteObject((Object*)m_pizza);
+		Object* pizza = dynamic_cast<Object*>(m_pizza);
+		assert(pizza);
+		_eventManager->DeleteObject(pizza);
 		m_pizza = nullptr;
 	}
 	if (nullptr != m_topping)
 	{
-		_eventManager->DeleteObject((Object*)m_topping);
+		Object* topping = dynamic_cast<Object*>(m_topping);
+		assert(topping);
+		_eventManager->DeleteObject(topping);
 		m_topping = nullptr;
 	}
 }

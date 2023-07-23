@@ -18,7 +18,6 @@ Scene_Main::Scene_Main()
 
 Scene_Main::~Scene_Main()
 {
-	DeleteAll();
 }
 
 void Scene_Main::Exit()

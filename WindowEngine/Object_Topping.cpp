@@ -40,6 +40,7 @@ void Object_Topping::Update(GameProcess* _gameProcess)
 	if (m_owner != nullptr)
 	{
  		Object_Player* player = dynamic_cast<Object_Player*>(m_owner);
+
 		if (player != nullptr) // m_owner가 player일때만 true
 		{
 			if (player->GetPlayerState() == PlayerState::IDLE)

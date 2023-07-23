@@ -12,6 +12,7 @@ Object_TimeUI::Object_TimeUI(GameProcess* gameProcess)
 
 Object_TimeUI::~Object_TimeUI()
 {
+	int a = 0;
 }
 
 void Object_TimeUI::SetMinute(int _minute)

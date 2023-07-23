@@ -15,7 +15,7 @@ Scene_Ending::~Scene_Ending()
 
 void Scene_Ending::Exit()
 {
-
+	DeleteAll();
 }
 
 void Scene_Ending::Enter(GameProcess* _gameProcess)

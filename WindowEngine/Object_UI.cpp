@@ -28,7 +28,13 @@ Object_UI::Object_UI(bool _camAffected)
 
 Object_UI::~Object_UI()
 {
-	Safe_Delete_Vec(m_childUI);
+	for (auto child : m_childUI)
+	{
+		if (child != nullptr)
+			delete child;
+	}
+	m_childUI.clear();
+
 }
 
 void Object_UI::AddChildUI(Object_UI* _child)
